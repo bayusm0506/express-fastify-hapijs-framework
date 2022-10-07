@@ -1,5 +1,8 @@
-console.log('Hello world!');
+import http from 'http';
 
-for (let i = 0; i < 10; i++) {
-  console.log(i);
-}
+http
+  .createServer(function (req, res) {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Hello World!');
+  })
+  .listen(2022);
